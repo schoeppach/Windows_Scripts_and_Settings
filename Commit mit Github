@@ -1,0 +1,45 @@
+# Development
+
+git.exe zwingend erforderlich:
+
+__Terminal:__
+
+git config user.name "schoeppach"
+
+git config user.email "schoeppach@magenta.de"
+
+
+mkdir git_development (Ordner esrtellen)
+
+cd git_development (in Ordner wechsel)
+
+git init (repository erstellen)
+
+
+__VS Code Menue:__
+
+Nachdem das Repository initialisiert wurde 
+fügen Sie eine Datei namens index.html hinzu.
+
+
+__Terminal:__
+
+echo "# Development" >> README.md (file)
+
+git init
+
+git add README.md (file)
+
+git commit -m "first commit"
+
+git branch -M main
+
+git remote add origin https://github.com/schoeppach/VSCode.git
+
+git push -u origin main 
+
+git.add (file) (Commit)
+
+(kann immer wieder zum syncronisieren verwendet werden)
+
+verändererungen werden in der Index.html app.js README.md vorgenommen
