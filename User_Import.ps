@@ -1,3 +1,4 @@
+## User Import
 
 $users=import-csv -LiteralPath "c:\user.csv" -Delimiter ";"
 foreach($user in $users) {$password=$user.Kennwort | ConvertTo-SecureString -AsPlainText -Force
