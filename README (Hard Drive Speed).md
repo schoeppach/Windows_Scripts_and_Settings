@@ -2,8 +2,8 @@
 ## Hard Drive Speed: --
 
 ### Read
-  'read' in Powershell run as Administrator --
-  winsat disk -seq -read -drive "x"
+  ####'read' in Powershell run as Administrator --
+        winsat disk -seq -read -drive "x"
 
 
 ### Write
