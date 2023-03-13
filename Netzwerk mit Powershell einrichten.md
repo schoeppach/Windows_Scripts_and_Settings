@@ -49,28 +49,25 @@
 ## Route zum ander Server herstellen Remove würde die Route entfernen
     New-NetRoute 172.16.0.0/16 -nexthop 192.168.1.254 Ethernet 
 
+## Domain Controller installieren und oder Passwort setzen
+    Install-ADDSDomainController -DomainName r1.kurs.iad
+    Install-ADDSDomainController -DomainName r1.kurs.iad -SafeModeAdministratorPassword ( Read-Host -AsSecureString -Prompt "Bitte das Kennwort" ) -Force
 
-Install-ADDSDomainController -DomainName r1.kurs.iad
-Install-ADDSDomainController -DomainName r1.kurs.iad -SafeModeAdministratorPassword ( Read-Host -AsSecureString -Prompt "Bitte das Kennwort" ) -Force
-(Domain Controller installieren und oder Passwort setzen)
+## überprüfen ob die Domain installiert ist)
+    Get-WindowsFeature | ? Name -Like Ad-Domain*
 
-Install-ADDSDomainController -DomainName r1.kurs.iad -SafeModeAdministratorPassword ( Read-Host -AsSecureString -Prompt "Bitte das Kennwort" ) -Force -Credential $cred
+## Ping erlauben
+    New-NetFirewallRule -DisplayName "Allow Ping" -Direction Inbound -Protocol ICMPv4 -IcmpType 8 -Action Allow
 
-Get-WindowsFeature | ? Name -Like Ad-Domain*
-(überprüfen ob die Domain installiert ist)
+## Forwarding
+    Set-NetIPInterface -Forwarding Enabled -InterfaceAlias LAN2
 
-New-NetFirewallRule -DisplayName "Allow Ping" -Direction Inbound -Protocol ICMPv4 -IcmpType 8 -Action Allow
-(Ping erlauben)
+## Netadapter
+    Get-Netadapter | select name,mediaconnectionstate
 
-Set-NetIPInterface -Forwarding Enabled -InterfaceAlias LAN2
-(Forw
-arding)
+    rename-Netadapter Ethernet -Newname Lan2
 
-Get-Netadapter | select name,mediaconnectionstate
-
-rename-Netadapter Ethernet -Newname Lan2
-
-rename-Netadapter "Ethernet2" -Newname Lan3
+    rename-Netadapter "Ethernet2" -Newname Lan3
 
 
 
