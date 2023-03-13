@@ -1,5 +1,7 @@
-Install-WindowsFeature Web-Server
+## install Windows Server
 
-New-Item C:\inetpub\wwwroot\London -Type directory
+### Install-WindowsFeature Web-Server
 
-New-IISSite London -PhysicalPath C:\inetpub\wwwroot\london -BindingInformation "172.16.0.15:8080:"
+### New-Item C:\inetpub\wwwroot\London -Type directory
+
+### New-IISSite London -PhysicalPath C:\inetpub\wwwroot\london -BindingInformation "172.16.0.15:8080:"
