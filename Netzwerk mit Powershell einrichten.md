@@ -7,15 +7,15 @@
 ## anzeigen lassen
     Get
 
+## ping auf bestimmte Ip im Netzwerk
+        ping 172.16.0.10
 
-ping 172.16.0.10
-(pingt bestimmte Ip im Netzwerk an)
+## Ip‘s im Netzwerk anzeigen
+        arp -a
 
-arp -a
-(Ip‘s im Netzwerk anzeigen)
+## IP einlenden
+        IPConfig
 
-IPConfig
-(IP einlenden)
 
 LogOff oder LogOn
 (ausloggen einloggen)
