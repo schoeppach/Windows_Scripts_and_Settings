@@ -1,4 +1,4 @@
-# DOMAINCONTROLLER:
+## DOMAINCONTROLLER:
 
 ### ip vergeben Name ändern
 
@@ -18,7 +18,7 @@
 
 ----------------------------------------
 
-# CLIENT:
+## CLIENT:
 
 ### CL1 konfigurieren
 
