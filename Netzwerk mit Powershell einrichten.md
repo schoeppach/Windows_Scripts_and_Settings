@@ -1,10 +1,13 @@
 ## Computer umbenennen
+
 ### Rename-Computer -ComputerName C1 -NewName C2 -DomainCredential dwp\admin -restart
 
 ## lokaler Benutzer umbennen
+
 ### Rename-LocalUser -Name "Power" -NewName "Austin" -confirm
 
 ## anzeigen lassen
+
 Get
 
 
