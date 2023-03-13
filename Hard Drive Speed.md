@@ -1,5 +1,5 @@
 
-## Hard Drive Speed: --
+## Hard Drive Speed:
 
 
 ### READ a Harddrive in Powershell run as Administrator
