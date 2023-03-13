@@ -29,26 +29,26 @@
     New-NetIPAddress 172.16.0.100 prefixlength 16 -Defaultgateway 172.16.0.1 -InterfaceAlias Ethernet oder LAN1
 
 ## installiert notwendige Programme für Active Directory oder DNS
-Install-windowsfeature AD-Domain-Services
+    Install-windowsfeature AD-Domain-Services
 
+## umbenennen Netztwerk
+    Rename-Netadapter -InterfaceAlias Ethernet -Newname LAN1 
 
-Rename-Netadapter -InterfaceAlias Ethernet -Newname LAN1 
-(umbenennen Netztwerk)
+## IP Adresse entfernen
+    Remove-NetIPadress 172.16.0.0 -InterfaceAlias LAN2
 
-Remove-NetIPadress 172.16.0.0 -InterfaceAlias LAN2
-(IP Adresse entfernen)
+## DNS Client setzen
+    Set-DnsClientServerAddress -InterfaceAlias LAN1 -ServerAddresses 192.168.1.10
 
-Set-DnsClientServerAddress -InterfaceAlias LAN1 -ServerAddresses 192.168.1.10
-(DNS Client setzen)
+## Routentabelle
+    Netstat -r 
 
-Netstat -r 
-(Routentabelle)
+## IP Familie anzeigen
+    Get-NetRoute -AddressFamily ipv4 
 
-Get-NetRoute -AddressFamily ipv4 
-(IP Familie anzeigen)
+## Route zum ander Server herstellen Remove würde die Route entfernen
+    New-NetRoute 172.16.0.0/16 -nexthop 192.168.1.254 Ethernet 
 
-New-NetRoute 172.16.0.0/16 -nexthop 192.168.1.254 Ethernet 
-(Route zum ander Server herstellen Remove würde die Rote entfernen)
 
 Install-ADDSDomainController -DomainName r1.kurs.iad
 Install-ADDSDomainController -DomainName r1.kurs.iad -SafeModeAdministratorPassword ( Read-Host -AsSecureString -Prompt "Bitte das Kennwort" ) -Force
