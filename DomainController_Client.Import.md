@@ -16,15 +16,15 @@
 
 ----------------------------------------
 
---CLIENT--
+## CLIENT
 
---CL1 konfigurieren--
+### CL1 konfigurieren
 
-New-NetIPAddress 172.16.0.100 -PrefixLength 16 -InterfaceAlias Ethernet
-Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses 172.16.0.10
-Rename-Computer CL1 -Force -Restart
+    New-NetIPAddress 172.16.0.100 -PrefixLength 16 -InterfaceAlias Ethernet
+    Set-DnsClientServerAddress -InterfaceAlias Ethernet -ServerAddresses 172.16.0.10
+    Rename-Computer CL1 -Force -Restart
 
---zur Domaine hinzufügen--
+### zur Domaine hinzufügen
 
-Add-Computer -DomainName schoeppach.de -Restart
+    Add-Computer -DomainName schoeppach.de -Restart
 
