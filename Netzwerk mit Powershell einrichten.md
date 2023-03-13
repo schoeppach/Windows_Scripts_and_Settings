@@ -1,11 +1,12 @@
+## Computer umbenennen
 ### Rename-Computer -ComputerName C1 -NewName C2 -DomainCredential dwp\admin -restart
-## (Computer umbenennen)
 
-Rename-LocalUser -Name "Power" -NewName "Austin" -confirm
-(lokaler Benutzer umbennen)
+## lokaler Benutzer umbennen
+### Rename-LocalUser -Name "Power" -NewName "Austin" -confirm
 
+## anzeigen lassen
 Get
-(bedeutet immer anzeigen lassen)
+
 
 ping 172.16.0.10
 (pingt bestimmte Ip im Netzwerk an)
