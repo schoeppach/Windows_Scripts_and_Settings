@@ -8,29 +8,29 @@
     Get
 
 ## ping auf bestimmte Ip im Netzwerk
-        ping 172.16.0.10
+    ping 172.16.0.10
 
 ## Ip‘s im Netzwerk anzeigen
-        arp -a
+    arp -a
 
 ## IP einlenden
-        IPConfig
+    IPConfig
 
+## ausloggen einloggen
+    LogOff oder LogOn
 
-LogOff oder LogOn
-(ausloggen einloggen)
+## gibt Liste der Netzwerk Adadapter aus
+    Get-NetAdapter
 
-Get-NetAdapter
-(gibt Liste der Netzwerk Adadapter aus)
+## Gateway entfernen
+    Remove-Netroute 0.0.0/0 -nexthop 172.168.0.1
 
-Remove-Netroute 0.0.0/0 -nexthop 172.168.0.1
-(Gateway entfernen)
+## IP Adresse vergeben
+    New-NetIPAddress 172.16.0.100 prefixlength 16 -Defaultgateway 172.16.0.1 -InterfaceAlias Ethernet oder LAN1
 
-New-NetIPAddress 172.16.0.100 prefixlength 16 -Defaultgateway 172.16.0.1 -InterfaceAlias Ethernet oder LAN1
-(IP Adresse vergeben)
+## installiert notwendige Programme für Active Directory oder DNS
+Install-windowsfeature AD-Domain-Services
 
-Install-windowsfeature AD-Domain-Services (oder DNS)
-(installiert notwendige Programme für Active Directory oder DNS)
 
 Rename-Netadapter -InterfaceAlias Ethernet -Newname LAN1 
 (umbenennen Netztwerk)
