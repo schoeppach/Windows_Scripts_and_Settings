@@ -1,4 +1,4 @@
-## install Windows Server
+## Install Windows Server:
 
 ### Install-WindowsFeature Web-Server
 
