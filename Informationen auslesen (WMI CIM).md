@@ -8,7 +8,7 @@
 
 	Get-WmiObject -Class Win32_ComputerSystem | Format-List -Property *
 
-	Get-WmiObject -Class Win32_ComputerSystem | Select Manufacturer,Model,@{n='RAM';e={$PSItem.TotalPhysicalMemory}}
+	Get-WmiObject -Class Win32_ComputerSystem | Select Manufacturer,Model,@{n='RAM';e={$PSItem.TotalPhysicalMemory/(1024*1024*1024)}}
 
 ## Service Information Abfrage
 	Get-WmiObject –Class Win32_Service –Filter "Name LIKE 'S%'" | Select Name,State,StartName
