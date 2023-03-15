@@ -20,7 +20,7 @@
 	Get-CimInstance -Class Win32_BIOS
 
 ## Adapter Configuration
-    	Get-CimInstance -Classname Win32_NetworkAdapterConfiguration -ComputerName LON-DC1
+	Get-CimInstance -Classname Win32_NetworkAdapterConfiguration -ComputerName LON-DC1
 
 ## User Group Information
-    	Get-CimInstance -ClassName Win32_Group -ComputerName LON-DC1
+	Get-CimInstance -ClassName Win32_Group -ComputerName LON-DC1
