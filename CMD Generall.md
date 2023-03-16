@@ -1,9 +1,5 @@
 ## ALLGEMEINES ##
 
-### Hilfe in der Shell:
-	Get-Help *resolve*
-	Get-Command *resolve*
-	Get-Command -Verb resolve
 
 ### Bildschirm Clear:
 	cls
